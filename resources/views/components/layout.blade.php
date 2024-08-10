@@ -9,8 +9,9 @@
 <body>
     <x-navbar/>
     {{$slot}}
+    </body>
     @if(!(route('login')||route('register')))
     <x-footer/>
     @endif
-</body>
+
 </html>

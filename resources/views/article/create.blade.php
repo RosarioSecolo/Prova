@@ -7,7 +7,8 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
-                <form action="route('article.store')" method="POST" class="card p-5 shadow" enctype="multipart/form-data">
+                <form action="{{route('article.store')}}" method="POST" class="card p-5 shadow" enctype="multipart/form-data">
+                    @csrf
                     <div class="mb-3">
                         <label for="title" class="form-label">Titolo</label>
                         <input type="text" name="title" class="form-control" id="title" value="{{old('title')}}">
@@ -49,7 +50,7 @@
                         @enderror
                     </div>
                     <div class="mt-3 d-flex justify-content-center flex-column align-items-center">
-                        <button type="submit" class="btn btn-outline-secondary">Inserisci un articolo</button>
+                        <button type="submit" class="btn btn-outline-secondary">Inserisci l'articolo</button>
                         <a href="{{route('homepage')}}" class="text-secondary mt-2">Torna alla home</a>
                     </div>
                 </form>

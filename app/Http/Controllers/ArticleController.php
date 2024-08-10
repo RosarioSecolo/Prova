@@ -2,26 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Article;
+use App\Models\Category;
+use App\Models\User;
+
+
+
 
 class ArticleController extends Controller implements HasMiddleware
 {
     /**
      * Implementation of the middleware to block non authenticate users
      */
-    public function middleware(){
-        return [new Middleware('auth',except:['index','show']),];
+    public static function middleware(){
+        return [new Middleware('auth',except:['index','show','byCategory','byWriter']),];
     }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $articles=Article::orderBy('created_at','DESC')->get();
+        return view('article.index',compact('articles'));
     }
 
     /**
@@ -61,7 +67,19 @@ class ArticleController extends Controller implements HasMiddleware
      */
     public function show(Article $article)
     {
-        //
+        return view('article.show',compact('article'));
+    }
+
+    public function byCategory(Category $category)
+    {
+        $articles=$category->articles()->orderBy('created_at','DESC')->get();
+        return view('article.by-category',compact('category','articles'));
+    }
+
+    public function byWriter(User $user)
+    {
+        $articles=$user->articles()->orderBy('created_at','DESC')->get();
+        return view('article.by-writer',compact('user','articles'));
     }
 
     /**

@@ -3,10 +3,10 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse  container" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       @auth
-      <li class="nav-item dropdown active">
+      <li class="nav-item dropdown active col-2">
         <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="NavbarDropdown" style="margin-right:50px;">
           Ciao {{Auth::user()->name}}
         </a>
@@ -24,10 +24,13 @@
       <li class="nav-item">
         <a class="nav-link" href="{{route('article.create')}}">Inserisci un articolo</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{{route('article.index')}}">Tutti gli articoli</a>
+      </li>
       @endauth
       @guest
-      <li class="nav-item dropdown active container">
-        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="NavbarDropdown" style="margin-right:50px;">
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="NavbarDropdown" style="margin-right:50px;">
           Benvenuto ospite
         </a>
         <ul class="dropdown-menu " aria-Labelledby="NavbarDropdown">
@@ -47,9 +50,6 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
     <form class="form-inline d-flex my-2 my-lg-0" style="background-origin:border-box;">
