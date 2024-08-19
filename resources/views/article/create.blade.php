@@ -1,7 +1,7 @@
 <x-layout>
-    <div class="container-fluid p-5 bg-secondary-subtle text-center">
+    <div class="container-fluid p-5 bg-secondary text-center">
         <div class="row justify-content-center">
-            <h1 class="display-1">Inserisci un articolo:</h1>
+            <h1 class="display-1 text-white">Inserisci un articolo:</h1>
         </div>
     </div>
     <div class="container my-5">

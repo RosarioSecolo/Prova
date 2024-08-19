@@ -26,8 +26,20 @@ class ArticleController extends Controller implements HasMiddleware
      */
     public function index()
     {
-        $articles=Article::orderBy('created_at','DESC')->get();
+        $articles=Article::where('is_accepted',TRUE)->orderBy('created_at','DESC')->get();
         return view('article.index',compact('articles'));
+    }
+
+    public function byCategory(Category $category)
+    {
+        $articles=$category->articles()->where('is_accepted',TRUE)->orderBy('created_at','DESC')->get();
+        return view('article.by-category',compact('category','articles'));
+    }
+
+    public function byWriter(User $user)
+    {
+        $articles=$user->articles()->where('is_accepted',TRUE)->orderBy('created_at','DESC')->get();
+        return view('article.by-writer',compact('user','articles'));
     }
 
     /**
@@ -70,18 +82,7 @@ class ArticleController extends Controller implements HasMiddleware
         return view('article.show',compact('article'));
     }
 
-    public function byCategory(Category $category)
-    {
-        $articles=$category->articles()->orderBy('created_at','DESC')->get();
-        return view('article.by-category',compact('category','articles'));
-    }
-
-    public function byWriter(User $user)
-    {
-        $articles=$user->articles()->orderBy('created_at','DESC')->get();
-        return view('article.by-writer',compact('user','articles'));
-    }
-
+   
     /**
      * Show the form for editing the specified resource.
      */

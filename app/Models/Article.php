@@ -11,7 +11,7 @@ use App\Models\Category;
 class Article extends Model
 {
     use HasFactory;
-    protected $fillable=['title','subtitle','body','image','user_id','category_id'];
+    protected $fillable=['title','subtitle','body','image','user_id','category_id','is_accepted'];
     
     /**
      * Relation between the models User and Article

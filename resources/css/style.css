@@ -7,6 +7,19 @@ footer{
     padding-bottom: 0;
     border-bottom: 0;
 }
+body{
+    background-color: whitesmoke;
+}
+/*Questo riguarda la modifica della grafica della card*/
+.card {
+    border:1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    overflow: hidden;
+    text-align: center;
+}
+
 .custom-card {
     border-radius: 15px;
     overflow: hidden;
@@ -23,6 +36,8 @@ footer{
     font-size: 1.25rem;
     font-weight: bold;
     color: #333;
+    padding: 15px;
+   
 }
 
 .card-subtitle {
@@ -38,4 +53,51 @@ footer{
 
 .btn-outline-secondary {
     border-radius: 20px;
+}
+
+.btn {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Questo riguarda la modifica di grafica della navbar*/
+.navbar {
+    background-color: #f8f9fa; /* Colore di sfondo più luminoso */
+    border-radius: 0.5rem; /* Arrotonda gli angoli */
+    padding: 10px 20px; /* Padding per un maggiore spazio interno */
+  }
+  
+  .nav-link {
+    color: #007bff; /* Colore del testo dei link */
+  }
+  
+  .nav-link:hover {
+    color: #0056b3; /* Colore al passaggio del mouse */
+  }
+  
+  .dropdown-menu {
+    background-color: #ffffff; /* Colore di sfondo del menu a discesa */
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f1f1f1; /* Colore al passaggio del mouse sui link del menu a discesa */
+  }
+  
+  .shadow {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra alla navbar */
+  }
+  /*Questo è per gestire la grafica dei messaggi di alert*/
+  .custom-alert {
+    margin: 0 auto; /* Centra l'elemento */
+    width: 50%; /* Imposta una larghezza */
+    text-align: center; /* Centra il testo */
+    background-color: #f8d7da; /* Colore di sfondo per l'alert */
+    color: #721c24; /* Colore del testo */
+    border: 1px solid #f5c6cb; /* Colore del bordo */
+    padding: 10px; /* Spaziatura interna */
+    border-radius: 5px; /* Bordo arrotondato */
+    display: block; /* Assicurati che sia un blocco per centrare */
 }

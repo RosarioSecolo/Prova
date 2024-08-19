@@ -6,12 +6,11 @@
     <title>Document</title>
     @vite(['resources\css\app.css','resources\js\app.js'])
 </head>
-<body>
+<body >
     <x-navbar/>
     {{$slot}}
+   
+    
+ 
     </body>
-    @if(!(route('login')||route('register')))
-    <x-footer/>
-    @endif
-
 </html>
